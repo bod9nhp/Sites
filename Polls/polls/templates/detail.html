@@ -1,0 +1,31 @@
+{%extends "base.html" %}
+
+{%block main%}
+
+
+<div style="background-color:gray;color:white;padding:10px;">
+    <a href="http://127.0.0.1:8000/polls">
+        <h1>Polls list </h1>
+    </a>
+</div>
+
+
+<div style="background-color:black;color:white;padding:10px;">
+    <h1>{{ question.question_text }}</h1>
+</div>
+
+<div style="background-color:silver;color:white;padding:10px;">
+    <h2>
+<form  action = "{% url 'polls:vote' question.id %}" method = "post">
+    {% csrf_token %}
+    {% for choice in question.choice_set.all %}
+        {{ choice.choice_text }}
+        <button type="submit" name="plus"  value="{{ choice.id }}" >👍</button>
+
+        <button type="submit" name="minus" value="{{ choice.id }}" >👎</button>
+    ({{ choice.votes }})<br>
+    {% endfor %}
+</form>
+    </h2>
+</div>
+{%endblock%}

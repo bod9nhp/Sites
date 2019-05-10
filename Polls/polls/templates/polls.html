@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+body {background-color: black;}
+h1   {color: white;}
+p    {color: red;}
+span {width:20}
+a:link {
+  color: black;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:visited {
+  color: black ;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:hover {
+  color: red;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:active {
+  color: red;
+  background-color: transparent;
+  text-decoration: none;
+}
+.s12{
+  padding: 5px;
+
+}
+
+input[type='search']:focus::-webkit-input-placeholder { color:transparent; }
+input[type='search']:focus:-moz-placeholder { color:transparent; } /* FF 4-18 */
+input[type='search']:focus::-moz-placeholder { color:transparent; } /* FF 19+ */
+input[type='search']:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
+
+input[type='search']{
+  color: black;
+
+}
+
+
+
+    </style>
+</head>
+<body>
+
+<div style="background-color:gray;color:white;padding:10px;">
+    <a href="http://127.0.0.1:8000/polls">
+        <h1>Polls list </h1>
+    </a>
+</div>
+
+<div class="s12">
+    <input type="search" placeholder="Введите текст для поиска">
+    <input type="button" value="Искать">
+</div>
+
+<div style="background-color:silver;color:white;padding:10px;">
+    <ul
+            style="list-style-type:none;
+    margin-left: 0;
+    padding-left: 0;">
+        {% for question in latest_question_list %}
+        <li>
+            <h2>
+                <a href="{% url 'polls:details' question.id %}">{{ question.question_text }}</a>
+            </h2>
+
+            <textarea name="comment" cols="25" rows="2"></textarea></p
+        </li>
+        {% endfor %}
+    </ul>
+
+</div>
+</body>
+</html>
+

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{%block title%} {%endblock%}</title>
+<head>
+    <style>
+body {background-color: black;}
+h1   {color: white;}
+h2   {color: black;}
+p    {color: red;}
+span {width:20}
+a:link {
+  color: black;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:visited {
+  color: black ;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:hover {
+  color: red;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:active {
+  color: red;
+  background-color: transparent;
+  text-decoration: none;
+}
+.s12{
+  padding: 5px;
+
+}
+
+input[type='search']:focus::-webkit-input-placeholder { color:transparent; }
+input[type='search']:focus:-moz-placeholder { color:transparent; } /* FF 4-18 */
+input[type='search']:focus::-moz-placeholder { color:transparent; } /* FF 19+ */
+input[type='search']:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
+
+input[type='search']{
+  color: black;
+
+}
+
+
+
+    </style>
+</head>
+
+</head>
+<body bgcolor="silver">
+{%block main%}
+{%endblock%}
+</body>
+</html>
